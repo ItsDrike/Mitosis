@@ -36,6 +36,10 @@ class Game:
                         if cell.rect.collidepoint(pos)
                     ]
                     self.mitosis(clicked_cell[0])
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_SPACE:
+                    for cell in self.cells[:]:
+                        self.mitosis(cell)
 
     def redraw_screen(self) -> None:
         """
