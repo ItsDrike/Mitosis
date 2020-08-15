@@ -66,7 +66,7 @@ class Game:
 
     def mitosis(self, cell: Cell) -> None:
         self.cells.remove(cell)
-        split_cells = cell.mitosis(Colors.RED)
+        split_cells = cell.mitosis()
 
         for split_cell in split_cells:
             self.cells.append(split_cell)

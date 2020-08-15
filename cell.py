@@ -12,14 +12,14 @@ class Cell:
         x: float,
         y: float,
         radius: float,
-        color: Colors.ColorType = Colors.BLUE,
+        color: t.Optional[Colors.ColorType] = None,
         x_speed: float = 0,
         y_speed: float = 0,
     ) -> None:
         self.x = x
         self.y = y
         self.radius = radius
-        self.color = color
+        self.color = color if color else Colors.RANDOM()
 
         self.x_positive = 1 if x_speed > 0 else -1
         self.y_positive = 1 if y_speed > 0 else -1
@@ -86,7 +86,7 @@ class Cell:
         r = randint(18, 38)
         x = randint(r, width - r)
         y = randint(r, height - r)
-        cell = cls(x, y, r, Colors.BLUE)
+        cell = cls(x, y, r)
 
         # Check for overlap
         for existing_cell in cells:

@@ -1,4 +1,5 @@
 import typing as t
+from random import randint
 from math import sqrt
 
 
@@ -30,3 +31,7 @@ class Colors:
     BLACK = 0, 0, 0
 
     ColorType = t.Tuple[int, int, int]
+
+    @staticmethod
+    def RANDOM() -> ColorType:
+        return (randint(100, 255), 0, randint(100, 255))
