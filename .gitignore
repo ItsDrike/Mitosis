@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+
+# Tests cache
+.pytest_cache/
+
+# Vscode per-workspace settings
+.vscode/
+
+# Intellij files
+.idea
+
+# Spyder files
+.spyproject/
+
+# DS Store
+.DS_STORE
+
+# Personal todo file
+TODO
