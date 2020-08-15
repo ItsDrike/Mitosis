@@ -10,10 +10,10 @@ Mitosis project can be started in a cell by clicking it.
 
 This is done easily just by clicking on the cell
 
-![Peek 2020-08-15 20-00-01](https://user-images.githubusercontent.com/20902250/90318725-b66a4c80-df32-11ea-9ef7-8d18ade31cf3.gif)
+![Peek 2020-08-15 22-58](https://user-images.githubusercontent.com/20902250/90321560-3ac8c980-df4b-11ea-8544-cd2d8c007981.gif)
 
 ### Mass mitosis
 
 This starts mitosis on every existing cell, it can be executed by pressing Spacebar
 
-![Peek 2020-08-15 20-00](https://user-images.githubusercontent.com/20902250/90318729-ba966a00-df32-11ea-8d38-8d773f9e84c2.gif)
+![Peek 2020-08-15 23-02](https://user-images.githubusercontent.com/20902250/90321589-6cda2b80-df4b-11ea-902f-c66383d05184.gif)
