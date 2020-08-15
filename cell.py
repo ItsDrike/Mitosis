@@ -1,11 +1,11 @@
 import typing as t
-from random import randint, choice
+from random import randint, choice, uniform
 
 from util import Colors, euclidean_distance
 
 
 class Cell:
-    DEACCELERATION_RATE = 0.1
+    DEACCELERATION_RATE = 0.05
 
     def __init__(
         self,
@@ -53,6 +53,11 @@ class Cell:
 
         return (cell_1, cell_2)
 
+    def jiggle(self) -> None:
+
+        self.x += uniform(-1.5, 1.5)
+        self.y += uniform(-1.5, 1.5)
+
     def move(self) -> None:
         """Movement of the cells"""
         if self.x_speed < 0:
@@ -66,6 +71,8 @@ class Cell:
         if self.y_speed:
             self.y += self.y_speed * self.y_positive
             self.y_speed -= self.DEACCELERATION_RATE
+
+        self.jiggle()
 
     @property
     def shape(self) -> t.Tuple[t.Tuple[int, int], int]:
