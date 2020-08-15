@@ -69,6 +69,7 @@ class Game:
             self.fps_clock.tick(self.tick_rate)
 
     def mitosis(self, cell: Cell) -> None:
+        """Split the cell in a process called mitosis."""
         self.cells.remove(cell)
         split_cells = cell.mitosis()
 
@@ -86,6 +87,7 @@ class Game:
         while self.running:
             for cell in self.cells[:]:
                 cell.move()
+                # Remove cells too far from edges
                 if any([
                     not (-cell.radius * 2 < cell.y < self.height + cell.radius * 2),
                     not (-cell.radius * 2 < cell.x < self.width + cell.radius * 2),
