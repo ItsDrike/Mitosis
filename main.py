@@ -5,8 +5,8 @@ import pygame
 from cell import Cell
 from util import Colors
 
-CELLS = 50
-WIDTH, HEIGHT = 800, 600
+CELLS = 100
+WIDTH, HEIGHT = 1200, 900
 TICK_RATE = 100
 
 
@@ -84,8 +84,13 @@ class Game:
 
         # Main game loop
         while self.running:
-            for cell in self.cells:
+            for cell in self.cells[:]:
                 cell.move()
+                if any([
+                    not (-cell.radius * 2 < cell.y < self.height + cell.radius * 2),
+                    not (-cell.radius * 2 < cell.x < self.width + cell.radius * 2),
+                ]):
+                    self.cells.remove(cell)
 
             self.update_screen()
 
