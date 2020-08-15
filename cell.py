@@ -1,6 +1,7 @@
 import typing as t
-from util import Colors, euclidean_distance
 from random import randint
+
+from util import Colors, euclidean_distance
 
 
 class Cell:

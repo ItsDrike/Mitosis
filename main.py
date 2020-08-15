@@ -1,9 +1,9 @@
-import pygame
 from contextlib import suppress
 
-from util import Colors
-from cell import Cell
+import pygame
 
+from cell import Cell
+from util import Colors
 
 CELLS = 50
 WIDTH, HEIGHT = 800, 600
