@@ -26,5 +26,7 @@ def euclidean_distance(
 class Colors:
     GREY = 125, 125, 125
     BLUE = 100, 0, 255
+    RED = 240, 20, 30
+    BLACK = 0, 0, 0
 
     ColorType = t.Tuple[int, int, int]

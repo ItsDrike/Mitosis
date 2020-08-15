@@ -27,6 +27,15 @@ class Game:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 self.running = False
+            # Start mitosis on mouse click
+            elif event.type == pygame.MOUSEBUTTONUP:
+                pos = pygame.mouse.get_pos()
+                with suppress(IndexError):
+                    clicked_cell = [
+                        cell for cell in self.cells
+                        if cell.rect.collidepoint(pos)
+                    ]
+                    self.mitosis(clicked_cell[0])
 
     def redraw_screen(self) -> None:
         """
@@ -37,7 +46,7 @@ class Game:
         self.screen.fill(Colors.GREY)
 
         for cell in self.cells:
-            pygame.draw.circle(self.screen, cell.color, *cell.shape)
+            cell.rect = pygame.draw.circle(self.screen, cell.color, *cell.shape)
 
     def update_screen(self, tick: bool = True) -> None:
         """
@@ -55,6 +64,13 @@ class Game:
         if tick:
             self.fps_clock.tick(self.tick_rate)
 
+    def mitosis(self, cell: Cell) -> None:
+        self.cells.remove(cell)
+        split_cells = cell.mitosis(Colors.RED)
+
+        for split_cell in split_cells:
+            self.cells.append(split_cell)
+
     def main(self, cell_amt: int) -> None:
         # Make the cells
         self.cells = []
@@ -64,6 +80,9 @@ class Game:
 
         # Main game loop
         while self.running:
+            for cell in self.cells:
+                cell.move()
+
             self.update_screen()
 
 
