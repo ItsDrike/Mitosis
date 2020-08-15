@@ -14,7 +14,7 @@ class Cell:
     def shape(self) -> t.Tuple[t.Tuple[int, int], int]:
         return ((self.x, self.y), self.radius)
 
-    def _overlaps(self, other: "Cell"):
+    def _overlaps(self, other: "Cell") -> bool:
         """Check if 2 cells overlaps each other"""
         distance = euclidean_distance(self.x, self.y, other.x, other.y)
         radius_sum = self.radius + other.radius
