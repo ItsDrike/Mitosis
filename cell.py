@@ -54,7 +54,7 @@ class Cell:
         return (cell_1, cell_2)
 
     def jiggle(self) -> None:
-
+        """Add a minor jiggling of the cells."""
         self.x += uniform(-1.5, 1.5)
         self.y += uniform(-1.5, 1.5)
 
